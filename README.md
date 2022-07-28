@@ -1,6 +1,4 @@
 # GetAround 
-
-
 # ⚠️ This project is mandatory for JedhaBootcamp certification bloc #5
 
 Email : hicham.mrani@outlook.fr
