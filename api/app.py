@@ -5,7 +5,6 @@ from pydantic import BaseModel
 from typing import Union
 import joblib
 import json
-import os
 
 # description will apear in the doc
 description = """
@@ -107,60 +106,52 @@ def other_re(x, list_):
 
 
 msg = """ 
-    Error! PLease check your input. It should be in json format. Example input:
-    "model_key": "Volkswagen",
-    "mileage": 17500,
-    "engine_power": 190,
-    "fuel": "diesel",
-    "paint_color": "black",
-    "car_type": "convertible",
-    "private_parking_available": True,
-    "has_gps": True,
-    "has_air_conditioning": True,
-    "automatic_car": True,
-    "has_getaround_connect": True,
-    "has_speed_regulator": True,
-    "winter_tires": True
+    Error! PLease check your input. It should be in json format. Example input:\n\n
+    "model_key": "Volkswagen",\n
+    "mileage": 17500,\n
+    "engine_power": 190,\n
+    "fuel": "diesel",\n
+    "paint_color": "black",\n
+    "car_type": "convertible",\n
+    "private_parking_available": True,\n
+    "has_gps": True,\n
+    "has_air_conditioning": True,\n
+    "automatic_car": True,\n
+    "has_getaround_connect": True,\n
+    "has_speed_regulator": True,\n
+    "winter_tires": True\n
     """
 
 
 @app.post("/predict", tags=["ML-Model-Prediction"])
 async def predict(predictionFeatures: PredictionFeatures):
     """
-    Prediction for single set of input variables. Possible input values in order are:
-
-    model_key: str
-    mileage: float
-    engine_power: float
-    fuel: str
-    paint_color: str
-    car_type: str
-    private_parking_available: bool
-    has_gps: bool
-    has_air_conditioning: bool
-    automatic_car: bool
-    has_getaround_connect: bool
-    has_speed_regulator: bool
-    winter_tires: bool
+    Prediction for single set of input variables. Possible input values in order are:\n\n
+    model_key: str\n
+    mileage: float\n
+    engine_power: float\n
+    fuel: str\n
+    paint_color: str\n
+    car_type: str\n
+    private_parking_available: bool\n
+    has_gps: bool\n
+    has_air_conditioning: bool\n
+    automatic_car: bool\n
+    has_getaround_connect: bool\n
+    has_speed_regulator: bool\n
+    winter_tires: bool\n\n
 
     Endpoint will return a dictionnary like this:
-
+    \n\n
     ```
     {'prediction': rental_price_per_day}
     ```
-
+    \n\n
     You need to give this endpoint all columns values as a dictionnary, or a form data.
     """
     if predictionFeatures.json:
-      # Printing JSON as dictionnary for user to check variables
-      #  requested_ = predictionFeatures.json()
-        print(predictionFeatures)
-      # if len (requested_.keys()) == 13 :
-        # Read data
+        # Printing JSON as dictionnary for user to check variables
         df = pd.DataFrame(dict(predictionFeatures), index=[0])
-
-        # Load the models from local
-
         preprocess = joblib.load('preprocessor.joblib') # preprocessing model
         regressor = joblib.load('model.joblib') # random forest model
 
