@@ -22,7 +22,7 @@ st.title('📊 Dashboard')
 urllib.request.urlretrieve(
     'https://lever-client-logos.s3.amazonaws.com/2bd4cdf9-37f2-497f-9096-c2793296a75f-1568844229943.png',
     "getaround_logo.png")
-image = Image.open('getaround_logo.png')
+image = Image.open('../img/getaround_logo.png')
 col1, col2, col3 = st.columns([1.5, 5, 1.5])
 col2.image(image, caption='Getaround user in action (Credit: Getaround.com)')
 st.markdown("""
