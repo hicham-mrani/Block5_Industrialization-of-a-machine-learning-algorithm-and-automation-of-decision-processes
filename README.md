@@ -160,4 +160,12 @@ There are two files you need to download:
    ```
 
 # Author
-Hicham Mrani - https://github.com/hicham-mrani
+Hicham Mrani - Github : https://github.com/hicham-mrani
+
+Getaround Dashboard : https://getaround-dashboard-hmrani.herokuapp.com
+
+API docs :
+
+API predicts :
+
+Video link : 
