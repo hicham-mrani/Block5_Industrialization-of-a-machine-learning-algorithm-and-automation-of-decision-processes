@@ -68,23 +68,10 @@ class PredictionFeatures(BaseModel):
 
 @app.get("/", tags=["Preview"])
 async def random_data(rows: int = 5):
-    """
-    Get a sample of your whole dataset. 
-    You can specify how many rows you want by specifying a value for `rows`, default is `5`.
-    To avoid loading full dataset, row amount is limited to 20.
-    """
-    try:
-        if rows < 21:
-            fname = "https://full-stack-assets.s3.eu-west-3.amazonaws.com/Deployment/get_around_pricing_project.csv"
-            df = pd.read_csv(fname, index_col=0, low_memory=False)
-            sample = df.sample(rows)
-            response = sample.to_json(orient='records')
-        else:
-            response = json.dumps(
-                {"message": "Error! Please select a row number not more than 20."})
-    except:
-        response = json.dumps(
-            {"message": "Error! Problem in accessing to historical data."})
+    fname = "https://full-stack-assets.s3.eu-west-3.amazonaws.com/Deployment/get_around_pricing_project.csv"
+    df = pd.read_csv(fname, index_col=0, low_memory=False)
+    sample = df.sample(rows)
+    response = sample.to_json(orient='records')
     return response
 
 # preparing labels that will be replaced as other
@@ -113,13 +100,13 @@ msg = """
     "fuel": "diesel",\n
     "paint_color": "black",\n
     "car_type": "convertible",\n
-    "private_parking_available": True,\n
-    "has_gps": True,\n
-    "has_air_conditioning": True,\n
-    "automatic_car": True,\n
-    "has_getaround_connect": True,\n
-    "has_speed_regulator": True,\n
-    "winter_tires": True\n
+    "private_parking_available": true,\n
+    "has_gps": true,\n
+    "has_air_conditioning": true,\n
+    "automatic_car": true,\n
+    "has_getaround_connect": true,\n
+    "has_speed_regulator": true,\n
+    "winter_tires": true\n
     """
 
 
@@ -148,6 +135,7 @@ async def predict(predictionFeatures: PredictionFeatures):
     ```
     \n\n
     You need to give this endpoint all columns values as a dictionnary, or a form data.
+    becarefull to fill with true and not True with cap
     """
     if predictionFeatures.json:
         # Printing JSON as dictionnary for user to check variables
