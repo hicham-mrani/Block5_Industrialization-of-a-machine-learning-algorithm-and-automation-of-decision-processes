@@ -4,11 +4,6 @@ import urllib.request
 import pandas as pd
 import numpy as np
 import plotly.express as px
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
-import seaborn as sns
-import matplotlib as mpl
-import matplotlib.pyplot as plt
 
 # Config
 st.set_page_config(
@@ -22,7 +17,7 @@ st.title('📊 Dashboard')
 urllib.request.urlretrieve(
     'https://lever-client-logos.s3.amazonaws.com/2bd4cdf9-37f2-497f-9096-c2793296a75f-1568844229943.png',
     "getaround_logo.png")
-image = Image.open('../img/getaround_logo.png')
+image = Image.open('getaround_logo.png')
 col1, col2, col3 = st.columns([1.5, 5, 1.5])
 col2.image(image, caption='Getaround user in action (Credit: Getaround.com)')
 st.markdown("""
