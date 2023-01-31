@@ -1,0 +1,16 @@
+{
+	"model_key":"Mitsubishi",
+	"mileage":119639,
+	"engine_power":230,
+	"fuel":"diesel",
+	"paint_color":"white",
+	"car_type":"suv",
+	"private_parking_available":true,
+	"has_gps":true,
+	"has_air_conditioning":true,
+	"automatic_car":true,
+	"has_getaround_connect":false,
+	"has_speed_regulator":true,
+	"winter_tires":true
+}
+// "rental_price_per_day":215
