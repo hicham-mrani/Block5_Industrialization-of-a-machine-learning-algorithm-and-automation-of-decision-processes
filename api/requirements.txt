@@ -9,3 +9,4 @@ mlflow
 boto3 
 sklearn
 python-multipart
+xgboost
