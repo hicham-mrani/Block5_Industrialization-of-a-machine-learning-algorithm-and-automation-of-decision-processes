@@ -160,6 +160,8 @@ There are two files you need to download:
 # Author
 Hicham Mrani - Github : https://github.com/hicham-mrani
 
+Email : hicham.mrani@outlook.fr
+
 Getaround Dashboard : https://getaround-dashboard-hmrani.herokuapp.com
 
 API docs : https://getaround-api-hmrani.herokuapp.com/docs
