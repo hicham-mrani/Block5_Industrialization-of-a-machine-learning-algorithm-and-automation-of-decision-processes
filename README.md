@@ -165,5 +165,3 @@ Email : hicham.mrani@outlook.fr
 Getaround Dashboard : https://getaround-dashboard-hmrani.herokuapp.com
 
 API docs : https://getaround-api-hmrani.herokuapp.com/docs
-
-Video link : https://share.vidyard.com/watch/dUE3fqdw41qXbTPBYzEdcd
